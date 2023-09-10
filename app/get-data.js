@@ -2,13 +2,15 @@ import fetch from 'node-fetch';
 import fs from 'fs';
 import 'dotenv/config'
 
-const BASE_URL = `${process.env.GITLAB_HOST}/api/v4/";
+const BASE_URL = `${process.env.GITLAB_HOST}/api/v4/`;
 const PROJECT_URL= `${BASE_URL}/projects`;
 const GROUPS_URL = `${BASE_URL}/groups`;
 
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 console.log(process.env.GITLAB_TOKEN);
+
+let projectCount = 0;
 
 const OPTIONS = {
           "headers": {
@@ -30,7 +32,7 @@ do {
 
     // for each project, get all members
     for (let project of projects) {
-
+        projectCount++
         // get member information
         const membersUrl = PROJECT_URL + `/${project.id}/members`;
         const membersResponse = await fetch(membersUrl, OPTIONS);
@@ -70,6 +72,8 @@ do {
     page = projectsResponse.headers['x-next-page']
 } while (page)
 
+
 // write data to file
 const graphData = {nodes: Object.values(nodes), links}
+console.log("total number of projects: " , projectCount)
 fs.writeFileSync('../viz/files/graph-data.json', JSON.stringify(graphData));

@@ -15,7 +15,8 @@ cd into the app folder and install the dependencies:
 ```
 npm install
 ```
-Then run the `get-data.js` script. This will create a file called `graph-data.json` in the `viz` directory.
+Then run the `get-data.js` script. This will create a file called `graph-data.json` in the `viz/files` directory. 
+You may first need to create the `files` subdirectory in the `viz` subfolder.
 ```
 node get-data.js
 ```

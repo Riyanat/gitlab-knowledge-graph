@@ -1,0 +1,19 @@
+{
+  "name": "gitlab-kg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "get-data.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "fetch": "^1.1.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "node-fetch": "^3.3.2"
+  }
+}

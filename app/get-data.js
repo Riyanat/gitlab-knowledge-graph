@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 import fs from 'fs';
 import 'dotenv/config'
 
-const BASE_URL = "https://gitlab.turntabl.net/api/v4/";
+const BASE_URL = `${process.env.GITLAB_HOST}/api/v4/";
 const PROJECT_URL= `${BASE_URL}/projects`;
 const GROUPS_URL = `${BASE_URL}/groups`;
 

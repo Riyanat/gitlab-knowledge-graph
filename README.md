@@ -6,6 +6,11 @@ This graph shows all the users and projects from a gitlab instance (assuming the
 To generate the graph data, you will need a get token. go to your gitlab instance and generate a token. Once you 
 have a token, set the GITLAB_TOKEN environment variable.
 
+Set the GITLAB_HOST env var e.g. 
+```
+GITLAB_HOST=https://gitlab.turntabl.net
+```
+
 cd into the app folder and install the dependencies:
 ```
 npm install
